@@ -8,349 +8,321 @@ import backet from "../assets/Backet.svg";
 import musem from "../assets/musem.svg";
 import martini from "../assets/martini.svg";
 import babycar from "../assets/babycar.svg";
-
-import card from "../assets/backgroundImage.png";
+import card from "../assets/krasnodar.png";
+import CategoryButton from "./CategoryButton";
+import FlagRu from "../assets/flag-ru.png";
+import FlagAm from "../assets/flag-am.png";
+import FlagEs from "../assets/flag-es.png";
+import FlagMd from "../assets/flag-md.png";
+import Krasnodar from "../assets/krasnodar.png";
+import Sochi from "../assets/sochi.jpeg";
+import SaintP from "../assets/saint-p.jpeg";
+import Minvod from "../assets/min-vod.jpeg";
+import Simferopol from "../assets/simf.jpeg";
+import Bacelona from "../assets/bcn.jpeg";
 
 const Destinations = styled.section`
   background: linear-gradient(-180deg, #f8fcff 0%, #ffffff 100%);
-  padding: 40px 0;
+  padding-top: 40px;
+  padding-bottom: 40px;
 `;
 
-const EditableOrigin = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 32px;
+const Icon = styled.img`
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 64px;
+  height: 64px;
 `;
 
-const Title = styled.h1`
+const Title = styled.h2`
   font-weight: 500;
   line-height: 24px;
   font-size: 18px;
   color: #4a4a4a;
-  margin: 25px 0 0 0;
+  margin: 24px 0 32px 0;
   padding: 0 16px;
+  text-align: center;
 `;
 
-const Origin = styled.p`
-  cursor: pointer;
+const CityChange = styled.button`
+  display: inline;
   color: #00ace2;
   font-size: 18px;
   line-height: 24px;
   position: relative;
-  margin: 0 0 0 16px;
-`;
-
-const Categories = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-`;
-
-const CategoryCard = styled.div`
-  display: flex;
-  flex-direction: column;
+  margin: 0;
   text-align: center;
-  margin: 24px 16px;
-  width: 72px;
 `;
 
-const Category = styled.div``;
-
-const CategoryButton = styled.button`
-  position: relative;
-  padding: 12px;
-  wight: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: #fff;
-  border: none;
-  cursor: pointer;
-  box-shadow: 0 4px rgba(74, 74, 74, 0.12);
-`;
-
-const CategoryText = styled.span`
-  font-size: 12px;
-  color: #00ace2;
-  line-height: 20px;
+const CityCard = styled.a`
+  display: block;
   margin-top: 12px;
-  text-transform: uppercase;
-  max-wight: 72px;
-`;
-
-const CityCard = styled.div`
-  margin-bottom: 20px;
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px 0 rgba(0, 75, 93, 0.12);
-  overflow: hidden;
-  position: relative;
-  background: #fff;
-`;
+  text-decoration: none;
 
-const CityFotoCover = styled.div`
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  position: relative;
-  z-index: 0;
-  @media only screen and (max-width: 576px) {
-    height: 126px;
+  @media (min-width: 768px) {
+    margin-top: 24px;
+  }
+  @media (min-width: 1200px) {
+    margin-top: 32px;
   }
 `;
 
-const CityFoto = styled.div`
-  background-image: url(${card});
-  position: absolute;
-  z-index: 0;
-  top: -1px;
-  bottom: -1px;
-  left: -1px;
-  right: -1px;
-  background-size: cover;
-  background-position: center bottom;
-  background-repeat: no-repeat;
+const CityFoto = styled.img`
+  background-color: #eee;
+  display: block;
+  height: 128px;
+  width: 100%;
+  border: none;
+  object-fit: cover;
+  border-radius: 8px 8px 0 0;
+
+  @media (min-width: 768px) {
+    height: 212px;
+  }
 `;
 
-const CityCadrFooter = styled.div`
+const CityCardFooter = styled.div`
   display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-  padding: 16px 16px 12px 16px;
+  padding: 16px;
+
+  @media (min-width: 768px) {
+    padding-top: 12px;
+  }
+  @media (min-width: 1200px) {
+    padding-right: 24px;
+  }
 `;
 
 const Location = styled.div`
-  padding-left: 0;
-  padding-right: 10px;
-  -ms-flex: 1;
   flex: 1;
-  overflow: hidden;
+  min-width: 0;
 `;
 
-const Flag = styled.div`
-  background-image: ;
-  background-size: cover;
-  border-radius: 100%;
-  position: absolute;
-  left: 25px;
-  height: 30px;
-  width: 30px;
+const Flag = styled.img`
   display: none;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+
+  @media (min-width: 768px) {
+    display: block;
+    align-text: center;
+    margin-left: 8px;
+    margin-right: 16px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 0.2px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 8px rgba(38, 38, 38, 0.1);
+  }
 `;
 
-const LocationCity = styled.div`
+const City = styled.p`
   font-size: 16px;
   line-height: 20px;
   font-weight: 600;
   color: #5b5b5c;
   white-space: nowrap;
-  max-width: 100%;
   text-overflow: ellipsis;
   overflow: hidden;
+  flex-grow: 1;
+  margin: 0 0 4px;
+  text-align: left;
+
+  @media (min-width: 768px) {
+    line-height: 32px;
+    font-size: 22px;
+  }
 `;
 
-const LocationContry = styled.div`
+const Contry = styled.p`
   font-size: 12px;
   line-height: 20px;
   text-transform: uppercase;
   color: #a0b0b9;
-  letter-spacing: 0.03125rem;
   white-space: nowrap;
   text-overflow: ellipsis;
-  overflow: hidden;
-  max-width: 100%;
+  verflow: hidden;
+  max-width: 0;
+  flex-grow: 1;
+  margin: 0;
+  font-weight: 500;
+  text-align: left;
 `;
 
 const Details = styled.div`
-  position: relative;
-  text-align: right;
-  z-index: 0;
+  margin-left: 8px;
 `;
 
-const Price = styled.div`
-  display: block;
-  color: #00ace2;
+const Price = styled.p`
+  white-space: nowrap;
+  color: #00bae8;
   font-size: 14px;
-  line-height: 16px;
+  line-height: 20px;
+  margin: 0 0 4px;
+  text-align: right;
+
+  @media (min-width: 768px) {
+    line-height: 32px;
+    font-size: 22px;
+  }
 `;
 
-const Data = styled.div`
-  display: block;
+const Data = styled.p`
+  white-space: nowrap;
   color: #a0b0b9;
   font-size: 12px;
   line-height: 20px;
+  font-weight: 500;
+  margin: 0;
+  text-align: right;
 `;
 
-export default function() {
+export default () => {
   return (
     <Destinations>
       <div className="container">
-        <div className="row">
-          <div className="col-xs-12">
-            <EditableOrigin className="center-xs">
-              <img src={compass} alt="compass" />
-              <Title>Популярные направления перелетов из города</Title>
-              <Origin>
-                Москва <img src={pancel} />
-              </Origin>
-            </EditableOrigin>
-            <Categories>
-              <CategoryCard>
-                <Category>
-                  <CategoryButton>
-                    <img src={planet} />
-                  </CategoryButton>
-                </Category>
-                <CategoryText>КУДА УГОДНО</CategoryText>
-              </CategoryCard>
-              <CategoryCard>
-                <Category>
-                  <CategoryButton>
-                    <img src={palm} />
-                  </CategoryButton>
-                </Category>
-                <CategoryText>СОЛНЦЕ И МОРЕ</CategoryText>
-              </CategoryCard>
-              <CategoryCard>
-                <Category>
-                  <CategoryButton>
-                    <img src={backet} />
-                  </CategoryButton>
-                </Category>
-                <CategoryText>ШОПИНГ, ГОРОД</CategoryText>
-              </CategoryCard>
-              <CategoryCard>
-                <Category>
-                  <CategoryButton>
-                    <img src={musem} />
-                  </CategoryButton>
-                </Category>
-                <CategoryText>КУЛЬТУРА И ИСТОРИЯ</CategoryText>
-              </CategoryCard>
-              <CategoryCard>
-                <Category>
-                  <CategoryButton>
-                    <img src={martini} />
-                  </CategoryButton>
-                </Category>
-                <CategoryText>НОЧНАЯ ЖИЗНЬ</CategoryText>
-              </CategoryCard>
-              <CategoryCard>
-                <Category>
-                  <CategoryButton>
-                    <img src={babycar} />
-                  </CategoryButton>
-                </Category>
-                <CategoryText>ОТДЫХ С ДЕТЬМИ</CategoryText>
-              </CategoryCard>
-            </Categories>
+        <Icon src={compass} alt="compass" />
+        <Title>
+          Популярные направления перелетов из города
+          <CityChange>
+            Москва <img src={pancel} />
+          </CityChange>
+        </Title>
+
+        <div className="row center-md">
+          <div className="col-xs-4 col-md-2 col-lg-1">
+            <CategoryButton img={planet}>
+              КУДА<br />УГОДНО
+            </CategoryButton>
           </div>
-          
-          <div className="col-xs-12">
-            <CityCard>
-              <CityFotoCover>
-                <CityFoto />
-              </CityFotoCover>
-              <CityCadrFooter>
-                <Location>
-                  <Flag />
-                  <LocationCity>Москва</LocationCity>
-                  <LocationContry>Россия</LocationContry>
-                </Location>
-                <Details>
-                  <Price>Найти от 1 212 ₽</Price>
-                  <Data>18 марта</Data>
-                </Details>
-              </CityCadrFooter>
-            </CityCard>
+          <div className="col-xs-4 col-md-2 col-lg-1">
+            <CategoryButton img={palm}>
+              СОЛНЦЕ<br />И МОРЕ
+            </CategoryButton>
+          </div>
+          <div className="col-xs-4 col-md-2 col-lg-1">
+            <CategoryButton img={backet}>
+              ШОПИНГ,<br />ГОРОД
+            </CategoryButton>
+          </div>
+          <div className="col-xs-4 col-md-2 col-lg-1">
+            <CategoryButton img={musem}>
+              КУЛЬТУРА<br />И ИСТОРИЯ
+            </CategoryButton>
+          </div>
+          <div className="col-xs-4 col-md-2 col-lg-1">
+            <CategoryButton img={martini}>
+              НОЧНАЯ<br />ЖИЗНЬ
+            </CategoryButton>
+          </div>
+          <div className="col-xs-4 col-md-2 col-lg-1">
+            <CategoryButton img={babycar}>
+              ОТДЫХ<br />С ДЕТЬМИ
+            </CategoryButton>
+          </div>
+        </div>
 
+        <div className="row center-md">
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <CityCard>
-              <CityFotoCover>
-                <CityFoto />
-              </CityFotoCover>
-              <CityCadrFooter>
+              <CityFoto src={Krasnodar} />
+              <CityCardFooter>
+                <Flag src={FlagRu} />
                 <Location>
-                  <Flag />
-                  <LocationCity>Москва</LocationCity>
-                  <LocationContry>Россия</LocationContry>
+                  <City>Краснодар</City>
+                  <Contry>Россия</Contry>
                 </Location>
                 <Details>
                   <Price>Найти от 1 212 ₽</Price>
                   <Data>18 марта</Data>
                 </Details>
-              </CityCadrFooter>
+              </CityCardFooter>
             </CityCard>
-
+          </div>
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <CityCard>
-              <CityFotoCover>
-                <CityFoto />
-              </CityFotoCover>
-              <CityCadrFooter>
+              <CityFoto src={Sochi} />
+              <CityCardFooter>
+                <Flag src={FlagRu} />
                 <Location>
-                  <Flag />
-                  <LocationCity>Москва</LocationCity>
-                  <LocationContry>Россия</LocationContry>
+                  <City>Сочи</City>
+                  <Contry>Россия</Contry>
                 </Location>
                 <Details>
-                  <Price>Найти от 1 212 ₽</Price>
-                  <Data>18 марта</Data>
+                  <Price>Найти от 1 334 ₽</Price>
+                  <Data>27 марта</Data>
                 </Details>
-              </CityCadrFooter>
+              </CityCardFooter>
             </CityCard>
-
+          </div>
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <CityCard>
-              <CityFotoCover>
-                <CityFoto />
-              </CityFotoCover>
-              <CityCadrFooter>
+              <CityFoto src={SaintP} />
+              <CityCardFooter>
+                <Flag src={FlagRu} />
                 <Location>
-                  <Flag />
-                  <LocationCity>Москва</LocationCity>
-                  <LocationContry>Россия</LocationContry>
+                  <City>Санкт-Петербург</City>
+                  <Contry>Россия</Contry>
                 </Location>
                 <Details>
-                  <Price>Найти от 1 212 ₽</Price>
-                  <Data>18 марта</Data>
+                  <Price>Найти от 1 508 ₽</Price>
+                  <Data>10 февраля</Data>
                 </Details>
-              </CityCadrFooter>
+              </CityCardFooter>
             </CityCard>
-
+          </div>
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <CityCard>
-              <CityFotoCover>
-                <CityFoto />
-              </CityFotoCover>
-              <CityCadrFooter>
+              <CityFoto src={Minvod} />
+              <CityCardFooter>
+                <Flag src={FlagRu} />
                 <Location>
-                  <Flag />
-                  <LocationCity>Москва</LocationCity>
-                  <LocationContry>Россия</LocationContry>
+                  <City>Минеральные Воды</City>
+                  <Contry>Россия</Contry>
                 </Location>
                 <Details>
-                  <Price>Найти от 1 212 ₽</Price>
-                  <Data>18 марта</Data>
+                  <Price>Найти от 2 074 ₽</Price>
+                  <Data>10 февраля</Data>
                 </Details>
-              </CityCadrFooter>
+              </CityCardFooter>
             </CityCard>
-
+          </div>
+          <div className="col-xs-12 col-md-10 col-lg-5">
             <CityCard>
-              <CityFotoCover>
-                <CityFoto />
-              </CityFotoCover>
-              <CityCadrFooter>
+              <CityFoto src={Simferopol} />
+              <CityCardFooter>
+                <Flag src={FlagRu} />
                 <Location>
-                  <Flag />
-                  <LocationCity>Москва</LocationCity>
-                  <LocationContry>Россия</LocationContry>
+                  <City>Симферополь (Крым)</City>
+                  <Contry>Россия</Contry>
                 </Location>
                 <Details>
-                  <Price>Найти от 1 212 ₽</Price>
-                  <Data>18 марта</Data>
+                  <Price>Найти от 2 074 ₽</Price>
+                  <Data>10 марта</Data>
                 </Details>
-              </CityCadrFooter>
+              </CityCardFooter>
+            </CityCard>
+          </div>
+          <div className="col-xs-12 col-md-10 col-lg-5">
+            <CityCard>
+              <CityFoto src={Bacelona} />
+              <CityCardFooter>
+                <Flag src={FlagEs} />
+                <Location>
+                  <City>Барселона</City>
+                  <Contry>Испания</Contry>
+                </Location>
+                <Details>
+                  <Price>Найти от 4 212 ₽</Price>
+                  <Data>24 марта</Data>
+                </Details>
+              </CityCardFooter>
             </CityCard>
           </div>
         </div>
       </div>
     </Destinations>
   );
-}
+};

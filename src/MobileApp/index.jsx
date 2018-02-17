@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import raiting from "../assets/raiting.svg";
-import phone from "../assets/phone.png";
+import phone_sm from "../assets/phone-sm.png";
+import phone_lg from "../assets/phone-lg.png";
 import apple from "../assets/apple.svg";
 import android from "../assets/android.svg";
 import windowsphone from "../assets/windowsphone.svg";
@@ -9,95 +10,145 @@ import windowsphone from "../assets/windowsphone.svg";
 const MobileApp = styled.section`
   background: linear-gradient(to left, #196ebd, #01b0dd);
   color: #fff;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: 768px)
+    margin-top: 40px;
+  };
+`;
+const Img = styled.img`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+`;
+
+const Phone = styled.picture`
+  height: 213px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  @media (min-width: 768px) {
+    height: 312px;
+  }
+
+  @media (min-width: 1200px) {
+    left: 9%;
+  }
 `;
 
 const Title = styled.h2`
-  font-size: 24;
+  margin-top: 0;
+  margin-bottom: 16px;
   font-weight: 500;
-  line-height: 28px;
-  margin: 24px 0 19px 0;
+  font-size: 24px;
   text-align: center;
-  color: #fff;
+  color: #ffffff;
+
+  @media (min-width: 768px) {
+    line-height: 40px;
+    font-size: 32px;
+    text-align: left;
+  }
 `;
 
-const Rating = styled.p`
-  display: flex;
-  justify-content: center;
-  white-space: nowrap;
+const Rating = styled.div`
+  text-align: center;
+  margin-top: 16px;
+  margin-bottom: 56px;
+  line-height: 20px;
+  font-size: 14px;
+  color: #ffffff;
+
+  @media (min-width: 768px) {
+    text-align: left;
+    margin-bottom: 40px;
+  }
+`;
+
+const Wrapper = styled.div`
+  position: relative;
+  min-height: 280px;
+  padding-top: 24px;
+  padding-bottom: 56px;
+
+  @media (min-width: 768px) {
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
 `;
 
 const Stars = styled.img`
   margin-right: 8px;
 `;
 
-const App = styled.div`
-  display: flex;
-  justify-content: center;
-`;
-
 const Iphone = styled.img``;
 
 const AppList = styled.div`
-  display: flex-inline;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 15px;
-`;
-
-const AppItem = styled.div`
   display: flex;
-  align-items: center;
-  margin: 20px 0;
-`;
+  flex-direction: column;
 
-const AppLink = styled.a`
-  color: inherit;
-  text-decoration: none;
-  padding-left: 8px;
-  &:hover {
-    text-decoration: underline;
+  @media (min-width: 768px) {
+    flex-direction: row;
   }
 `;
 
-const Apple = styled.img``;
-const Android = styled.img``;
-const Windowsphone = styled.img``;
+const AppLink = styled.a`
+  display: block;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  line-height: 24px;
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+
+  :hover {
+    text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0 40px 0 0;
+  }
+`;
+
+const Link = styled.img`
+  margin-right: 8px;
+  vertical-align: middle;
+`;
 
 export default function() {
   return (
     <MobileApp>
       <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-lg-10 col-lg-offset-1">
-            <Title>Скачай мобильное приложение Aviasales.ru</Title>
+        <Wrapper>
+          <Phone>
+            <source srcSet={phone_lg} media="(@media (min-width: 768px)" />
+            <Img src={phone_sm} alt="" />
+          </Phone>
+          <div className="row">
+            <div className="col-xs-12 col-md-offset-4 col-md-8">
+              <Title>Скачай мобильное приложение Aviasales.ru</Title>
+              <Rating>
+                <img src={raiting} /> Более 103 000 оценок
+              </Rating>
+            </div>
+            <div className="col-xs-offset-6 col-xs-6 col-md-offset-4 col-md-8">
+              <AppList>
+                <AppLink href="#">
+                  <Link src={apple} alt="" /> iPhone или iPad
+                </AppLink>
+                <AppLink href="#">
+                  <Link src={android} alt="" /> Android
+                </AppLink>
+                <AppLink href="#">
+                  <Link src={windowsphone} alt="" /> Windows Phone
+                </AppLink>
+              </AppList>
+            </div>
           </div>
-        </div>
+        </Wrapper>
       </div>
-      <Rating>
-        <Stars src={raiting} /> Более 103 000 оценок
-      </Rating>
-      <App>
-        <div>
-          <Iphone src={phone} />
-        </div>
-
-        <AppList>
-          <AppItem>
-            <Apple src={apple} />
-            <AppLink href="#">iPhone или iPad</AppLink>
-          </AppItem>
-
-          <AppItem>
-            <Android src={android} />
-            <AppLink href="#">Android</AppLink>
-          </AppItem>
-
-          <AppItem>
-            <Windowsphone src={windowsphone} />
-            <AppLink href="#">Windows Phone</AppLink>
-          </AppItem>
-        </AppList>
-      </App>
     </MobileApp>
   );
 }

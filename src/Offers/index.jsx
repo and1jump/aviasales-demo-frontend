@@ -5,7 +5,8 @@ import OffersCard from "./OffersCard";
 const Offers = styled.section`
   font-famaly: "Roboto", Helvetica Neue, Open Sans, sans-serif;
   background: linear-gradient(to left, #196ebd, #01b0dd);
-  padding: 16px 0 24 0;
+  padding-bottom: 24px;
+  padding-top: 16px;
 `;
 
 const OffersWrapper = styled.div``;
@@ -39,7 +40,11 @@ export default function() {
   return (
     <Offers>
       <div className="container">
-        <Title>Спецпредложения на авиабилеты</Title>
+        <div className="row center-xs">
+          <div className="col-xs-12 col-xl-10">
+            <Title>Спецпредложения на авиабилеты</Title>
+          </div>
+        </div>
         <div className="row">
           <OffersCard />
           <OffersCard />

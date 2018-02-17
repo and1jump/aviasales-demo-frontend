@@ -8,6 +8,7 @@ import koreanair from "../assets/korean-air.png";
 import triplogo from "../assets/one-two-trip.png";
 import sevenlogo from "../assets/s7-airlines.png";
 import colorline from "../assets/color-line.png";
+import EmailForm from "./EmailForm";
 
 const Slider = styled.div``;
 
@@ -41,14 +42,28 @@ const Firms = styled.div`
 
 const Logotype = styled.img`
   max-height: 50px;
-  margin: 16px 10px; 
+  margin: 16px 10px;
 `;
 
+const Pagination = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+`;
 
+const Indicator = styled.button`
+  margin: 0 4px;
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: 1px solid #818181;
+  border-radius: 50%;
+  background: ${props => (props.active ? "#818181" : "#fff")};
+`;
 
 export default function() {
   return (
-    <Slider className="hidden-xs hidden-sm">
+    <Slider>
       <div className="container">
         <div className="row center-md">
           <div className="col-md-10">
@@ -70,9 +85,15 @@ export default function() {
                 <img src={rightarrow} />
               </Button>
             </Carousel>
+            <Pagination>
+              <Indicator active />
+              <Indicator />
+              <Indicator />
+            </Pagination>
           </div>
         </div>
       </div>
+      <EmailForm />
     </Slider>
   );
 }

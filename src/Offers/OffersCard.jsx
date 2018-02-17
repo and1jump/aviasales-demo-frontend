@@ -10,7 +10,7 @@ const OffersCard = styled.div`
   color: #ffffff;
   margin: 0 0 12px 0;
   min-width: 233px;
-  ${"" /* ToDO: медиазапросами сделать отступы */} padding: 0;
+  padding: 0;
 `;
 
 const Header = styled.div`

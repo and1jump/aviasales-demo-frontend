@@ -17,11 +17,13 @@ class App extends Component {
         <Header />
         <Destinations />
         <PopularDirections />
-        <Slider />
-        <Offers />
+        <div className="hidden-xs hidden-sm">
+          <Slider />
+        </div>
+        <Offers /> 
         <Articles />
         <MobileApp />
-        <Footer />
+        <Footer /> 
       </div>
     );
   }

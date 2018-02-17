@@ -7,36 +7,70 @@ import list from "../assets/help-list.png";
 const Articles = styled.section`
   font-famaly: "Roboto", Helvetica Neue, Open Sans, sans-serif;
   background-color: #fff;
-  padding: 20px 0 24px 0;
+  padding-top: 4px;
+  padding-bottom: 24px;
+
+  @media (min-width: 768px) {
+    padding-bottom: 48px;
+  }
+
+  @media (min-width: 1200px) {
+    padding-bottom: 40px;
+  }
 `;
 
 const Title = styled.h2`
-  margin: 0 0 22px 0;
+  margin: 16px 0 12px 0;
   font-weight: 600;
   font-size: 13px;
   line-height: 18px;
   text-transform: uppercase;
+  text-align: left;
+  color: #4a4a4a;
+
+  @media (min-width: 768px) {
+    margin-bottom: 16px;
+  }
+
+  @media (min-width: 1200px) {
+    margin-top: 24px;
+  }
 `;
 
 const TitleImg = styled.img`
-  margin-right: 10px;
+  margin-right: 8px;
+  width: 16px;
+  vertical-align: -2px;
 `;
 
 const Text = styled.p`
-  margin-bottom: 0 0 17px 0;
+  margin-top: 0;
+  margin-bottom: 0px;
+  font-weight: normal;
+  line-height: 20px;
+  font-size: 14px;
+  text-align: left;
+  color: #4a4a4a;
 `;
 
 const LinkMore = styled.a`
   color: #00ace2;
   text-decoration: none;
+  line-height: 20px;
+  font-size: 14px;
+  cursor: pointer;
+
+  :hover {
+    color: #ff9d1b;
+  }
 `;
 
 export default function() {
   return (
     <Articles>
       <div className="container">
-        <div className="row">
-          <div className="col-xs-12 col-lg-10 col-lg-offset-1">
+        <div className="row center-lg">
+          <div className="col-xs-12 col-lg-10">
             <Title>
               <TitleImg src={plane} />КАК КУПИТЬ ДЕШЕВЫЕ АВИАБИЛЕТЫ?
             </Title>

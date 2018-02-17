@@ -1,0 +1,22 @@
+<svg width="38" height="38" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Group</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-1883 -4596)">
+<g id="Group">
+<g id="backgroundColor">
+<use xlink:href="#path0_fill" transform="translate(1884 4597)" fill="#9B9B9B"/>
+<use xlink:href="#path1_stroke" transform="translate(1884 4597)" fill="#979797"/>
+</g>
+<g id="facebook">
+<g id="Shape">
+<use xlink:href="#path2_fill" transform="translate(1896.29 4605.29)" fill="#FFFFFF"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 0 18C 0 8.05888 8.05888 0 18 0C 27.9411 0 36 8.05888 36 18C 36 27.9411 27.9411 36 18 36C 8.05888 36 0 27.9411 0 18Z"/>
+<path id="path1_stroke" d="M 18 35.5C 8.33502 35.5 0.5 27.665 0.5 18L -0.5 18C -0.5 28.2173 7.78273 36.5 18 36.5L 18 35.5ZM 35.5 18C 35.5 27.665 27.665 35.5 18 35.5L 18 36.5C 28.2173 36.5 36.5 28.2173 36.5 18L 35.5 18ZM 18 0.5C 27.665 0.5 35.5 8.33502 35.5 18L 36.5 18C 36.5 7.78273 28.2173 -0.5 18 -0.5L 18 0.5ZM 18 -0.5C 7.78273 -0.5 -0.5 7.78273 -0.5 18L 0.5 18C 0.5 8.33502 8.33502 0.5 18 0.5L 18 -0.5Z"/>
+<path id="path2_fill" fill-rule="evenodd" d="M 10.8914 3.40914L 7.78 3.40914C 7.41257 3.40914 7.00114 3.89314 7.00114 4.54057L 7.00114 6.78629L 10.8914 6.78629L 10.8914 9.98914L 7.00114 9.98914L 7.00114 19.6063L 3.32914 19.6063L 3.32914 9.98857L 0 9.98857L 0 6.78686L 3.32914 6.78686L 3.32914 4.90286C 3.32914 2.2 5.20571 0 7.78057 0L 10.8914 0L 10.8914 3.408"/>
+</defs>
+</svg>

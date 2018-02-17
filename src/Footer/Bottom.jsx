@@ -17,6 +17,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  margin-top: 16px;
 `;
 
 const Link = styled.a`
@@ -56,6 +57,11 @@ const Apps = styled.div`
   }
 `;
 
+const Icon = styled.img`
+  vertical-align: middle;
+  margin-right: 8px;
+`;
+
 const AppLink = styled.a`
   display: block;
   align: flex;
@@ -87,19 +93,19 @@ export default () => {
             </Wrapper>
             <Wrapper>
               <Link href="#">
-                <img src={vk} />Вконтакте
+                <Icon src={vk} />Вконтакте
               </Link>
               <Link href="#">
-                <img src={facebook} />Фейсбук
+                <Icon src={facebook} />Фейсбук
               </Link>
               <Link href="#">
-                <img src={instagram} />Инстаграм
+                <Icon src={instagram} />Инстаграм
               </Link>
               <Link href="#">
-                <img src={twitter} />Твиттер
+                <Icon src={twitter} />Твиттер
               </Link>
               <Link href="#">
-                <img src={viber} />Вайбер
+                <Icon src={viber} />Вайбер
               </Link>
             </Wrapper>
             <div className="center-xs start-sm">
