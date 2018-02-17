@@ -4,6 +4,7 @@ import styled, { css } from "styled-components";
 import Header from "./Header";
 import Destinations from "./Destinations";
 import PopularDirections from "./PopularDirections";
+import Slider from "./Slider";
 import Offers from "./Offers";
 import Articles from "./Articles";
 import MobileApp from "./MobileApp";
@@ -16,6 +17,7 @@ class App extends Component {
         <Header />
         <Destinations />
         <PopularDirections />
+        <Slider />
         <Offers />
         <Articles />
         <MobileApp />

@@ -245,6 +245,7 @@ export default function() {
               </CategoryCard>
             </Categories>
           </div>
+          
           <div className="col-xs-12">
             <CityCard>
               <CityFotoCover>

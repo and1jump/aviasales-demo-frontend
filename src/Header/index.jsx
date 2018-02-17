@@ -31,9 +31,21 @@ const Title = styled.h1`
   margin-top: 47px;
 `;
 
-const Logo = styled.img`
+const Logotype = styled.div`
   margin-top: 12px;
+  display: flex;
+  aling-items: center;
 `;
+
+const LogoText = styled.p`
+  margin: 0 0 0 12px;
+  font-size: 20px;
+  line-height: 25px;
+  color: #fff;
+  font-weight: 300;
+`;
+
+const Logo = styled.img``;
 
 const Airplane = styled.img`
   width: 26px;
@@ -48,7 +60,7 @@ const Airplane = styled.img`
 
 const Form = styled.div`
   font-size: 16px;
-  margin-bottom: 2rem;
+  margin-bottom: 48px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -77,14 +89,22 @@ const InputSmall = styled.div`
 const InputInner = styled.div`
   display: flex;
   align-items: center;
-  border-radius: 0.5rem;
+  border-radius: 4px 4px 0 0;
   color: #4a4a4a;
   background: #ffffff;
   position: relative;
   margin: 1px;
+  @media (min-width: 768px) {
+    border-radius: 4px 0 0 0;
+  }
+
+  @media (min-width: 1200px) {
+    border-radius: 4px 0 0 4px;
+  }
 `;
 
 const PlaceInput = styled.input`
+  border-radius: 3px 0 0 3px;
   color: inherit;
   padding: 18px 0 16px 18px;
   width: 100%;
@@ -97,90 +117,104 @@ const PlaceInput = styled.input`
   }
 `;
 
-const IATACode = styled.span`
-  margin-right: 1rem;
+const City = styled.span`
+  margin-right: 52px;
   color: #a0b0b9;
 `;
 
 const InputButton = styled.button`
-  margin-right: 1rem;
-  border: none;
-  background-position: center no-repeat;
-  width: 20px;
+  position: absolute;
+  margin-right: 17px;
+  right: 0;
   height: 24px;
   padding: 0;
 `;
 
-const DownButton = styled.button`
+const DropDownButton = styled.button`
   background: #ffffff;
   color: inherit;
   border-radius: inherit;
   border: none;
-  padding: 2rem;
+  padding: 17px;
   width: 100%;
   box-sizing: border-box;
   text-align: left;
   position: relative;
 `;
 
-const PaxAdditional = styled.span`
+const Comfort = styled.span`
   color: #a0b0b9;
 `;
 
 const DownMark = styled.img`
   position: absolute;
-  right: 1rem;
-  top: 2rem;
-  padding-top: 1rem;
-  padding-right: 1rem;
+  right: 6px;
+  top: 9px;
+  padding-top: 16px;
+  padding-right: 16px;
 `;
 
 export default function() {
   return (
     <Header>
       <div className="container">
-        <Logo src={logo} alt="aviasales logo" />
+        <Logotype>
+          <Logo src={logo} alt="aviasales logo" />
+          <LogoText className="hidden-xs hidden-sm">aviasales</LogoText>
+        </Logotype>
         <Title>Поиск дешевых авиабилетов</Title>
         <Form>
           <InputOrigin>
             <InputInner>
               <PlaceInput value="Москва" placeholder="Город вылета" />
-              <InputButton src={arrow} />
-              <IATACode>REN</IATACode>
+              <City>MOW</City>
+              <InputButton>
+                <img src={arrow} />
+              </InputButton>
             </InputInner>
           </InputOrigin>
 
           <InputOrigin>
             <InputInner>
               <PlaceInput value="" placeholder="Город прибытия" />
-              <IATACode />
+              <City />
             </InputInner>
           </InputOrigin>
 
           <InputSmall>
             <InputInner>
               <PlaceInput value="" placeholder="Туда" />
-              <InputButton src={IconeDepart} />
+              <InputButton>
+                <img src={IconeDepart} />
+              </InputButton>
             </InputInner>
           </InputSmall>
           <InputSmall>
             <InputInner>
               <PlaceInput value="" placeholder="Обратно" />
-              <InputButton src={IconeDepart} />
+              <InputButton>
+                <img src={IconeDepart} />
+              </InputButton>
             </InputInner>
           </InputSmall>
 
           <InputOrigin>
             <InputInner>
-              <DownButton>
-                1 пассажир, <PaxAdditional>эконом</PaxAdditional>
+              <DropDownButton>
+                1 пассажир, <Comfort>эконом</Comfort>
                 <DownMark src={downarrow} />
-              </DownButton>
+              </DropDownButton>
             </InputInner>
           </InputOrigin>
-
-          <Button>Найти билеты <img src={airplane} /></Button>
         </Form>
+
+        <div className="row center-xs">
+          <div className="col-xs-12 col-md-6 col-lg-4">
+            <Button>
+              Найти билеты <img src={airplane} />
+            </Button>
+          </div>
+        </div>
       </div>
     </Header>
   );
