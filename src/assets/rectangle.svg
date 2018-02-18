@@ -1,0 +1,12 @@
+<svg width="26" height="21" viewBox="0 0 26 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Rectangle-169</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-2643 -392)">
+<g id="Rectangle-169">
+<use xlink:href="#path0_fill" transform="translate(2643 392.119)" fill="#FFFFFF"/>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 11.1587 8.94894L 5.22021 8.94894L 1.49146 5.96597L 0 6.7117L 1.74072 9.61298C 1.58301 9.84973 1.49146 10.1343 1.49146 10.4404C 1.49146 10.654 1.53589 10.8564 1.61572 11.0393L 0 14.1692L 1.49146 14.9149L 5.22021 11.9319L 11.1863 11.9319L 7.45752 20.8809L 10.4404 20.8809L 16.4065 11.9319L 23.8625 11.9319C 24.6921 11.9319 25.3552 11.2642 25.3552 10.4404C 25.3552 9.61096 24.687 8.94894 23.8625 8.94894L 16.4065 8.94894L 10.4404 0L 7.45752 0C 7.45752 0 9.84961 5.87305 11.1863 8.94894L 11.1587 8.94894Z"/>
+</defs>
+</svg>

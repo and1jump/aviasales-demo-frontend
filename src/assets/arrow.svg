@@ -1,0 +1,17 @@
+<svg width="16" height="18" viewBox="0 0 16 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>arrow</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(-2689 -147)">
+<g id="arrow">
+<g id="Combined Shape">
+<use xlink:href="#path0_fill" transform="translate(2689 147)" fill="#1BA6D2"/>
+</g>
+<g id="Combined Shape">
+<use xlink:href="#path0_fill" transform="matrix(-1 -1.22465e-16 1.22465e-16 -1 2705 165)" fill="#1BA6D2"/>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" fill-rule="evenodd" d="M 5 8L 0 4L 5 0L 5 3L 16 3L 16 5L 5 5L 5 8Z"/>
+</defs>
+</svg>
