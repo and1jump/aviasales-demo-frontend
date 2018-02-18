@@ -53,6 +53,8 @@ const CityChange = styled.button`
   position: relative;
   margin: 0;
   text-align: center;
+  border: none;
+  background: none;
 `;
 
 const CityCard = styled.a`

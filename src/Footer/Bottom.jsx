@@ -36,7 +36,10 @@ const LinkSearch = styled.a`
   text-decoration: none;
   font-size: 12px;
   line-height: 16px;
-  margin: 0 18px 18px 0;
+  margin: 32px 18px 18px 0;
+  @media (min-width: 1200px) {
+  margin-top: 24px:
+  };
   &:hover {
     color: #fd8a27;
   }
@@ -52,7 +55,7 @@ const Apps = styled.div`
   flex-wrap: wrap;
   align-items: center;
   margin-bottom: 24px;
-  @media only screen and (min-width: 992px) {
+  @media (min-width: 992px) {
     flex-wrap: nowrap;
   }
 `;

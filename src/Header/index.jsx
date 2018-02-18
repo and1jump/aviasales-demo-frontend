@@ -102,6 +102,79 @@ const InputInner = styled.div`
     border-radius: 4px 0 0 4px;
   }
 `;
+const InputFrom = styled.div`
+  display: flex;
+  align-items: center;
+  border-radius: 4px 4px 0 0;
+  color: #4a4a4a;
+  background: #ffffff;
+  position: relative;
+  margin: 1px;
+  @media (min-width: 768px) {
+    border-radius: 4px 0 0 0;
+  }
+
+  @media (min-width: 1200px) {
+    border-radius: 4px 0 0 4px;
+  }
+`;
+const InputTo = styled.div`
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  background: #ffffff;
+  position: relative;
+  margin: 1px;
+  @media (min-width: 768px) {
+    border-radius: 0 4px 0 0;
+  }
+
+  @media (min-width: 1200px) {
+    border-radius: 0;
+  }
+`;
+
+const InputSmallFrom = styled.div`
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  background: #ffffff;
+  position: relative;
+  margin: 1px;
+`;
+
+const InputSmallTo = styled.div`
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  background: #ffffff;
+  position: relative;
+  margin: 1px;
+  @media (min-width: 768px) {
+    border-radius: 0 0 0 4px;
+  }
+
+  @media (min-width: 1200px) {
+    border-radius: 0;
+  }
+`;
+
+const InputDropDown = styled.div`
+  display: flex;
+  align-items: center;
+  border-radius: 0 0 4px 4px;
+  color: #4a4a4a;
+  background: #ffffff;
+  position: relative;
+  margin: 1px;
+  @media (min-width: 768px) {
+    border-radius: 0 0 4px 0;
+  }
+
+  @media (min-width: 1200px) {
+    border-radius: 0 4px 4px 0;
+  }
+`;
 
 const PlaceInput = styled.input`
   border-radius: 3px 0 0 3px;
@@ -128,6 +201,7 @@ const InputButton = styled.button`
   right: 0;
   height: 24px;
   padding: 0;
+  border: none;
 `;
 
 const DropDownButton = styled.button`
@@ -165,46 +239,46 @@ export default function() {
         <Title>Поиск дешевых авиабилетов</Title>
         <Form>
           <InputOrigin>
-            <InputInner>
+            <InputFrom>
               <PlaceInput value="Москва" placeholder="Город вылета" />
               <City>MOW</City>
               <InputButton>
                 <img src={arrow} />
               </InputButton>
-            </InputInner>
+            </InputFrom>
           </InputOrigin>
 
           <InputOrigin>
-            <InputInner>
+            <InputTo>
               <PlaceInput value="" placeholder="Город прибытия" />
               <City />
-            </InputInner>
+            </InputTo>
           </InputOrigin>
 
           <InputSmall>
-            <InputInner>
+            <InputSmallTo>
               <PlaceInput value="" placeholder="Туда" />
               <InputButton>
                 <img src={IconeDepart} />
               </InputButton>
-            </InputInner>
+            </InputSmallTo>
           </InputSmall>
           <InputSmall>
-            <InputInner>
+            <InputSmallFrom>
               <PlaceInput value="" placeholder="Обратно" />
               <InputButton>
                 <img src={IconeDepart} />
               </InputButton>
-            </InputInner>
+            </InputSmallFrom>
           </InputSmall>
 
           <InputOrigin>
-            <InputInner>
+            <InputDropDown>
               <DropDownButton>
                 1 пассажир, <Comfort>эконом</Comfort>
                 <DownMark src={downarrow} />
               </DropDownButton>
-            </InputInner>
+            </InputDropDown>
           </InputOrigin>
         </Form>
 

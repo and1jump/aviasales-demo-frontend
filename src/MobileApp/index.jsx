@@ -10,12 +10,10 @@ import windowsphone from "../assets/windowsphone.svg";
 const MobileApp = styled.section`
   background: linear-gradient(to left, #196ebd, #01b0dd);
   color: #fff;
-  padding: 0;
-  margin: 0;
 
-  @media (min-width: 768px)
+  @media (min-width: 768px) {
     margin-top: 40px;
-  };
+  }
 `;
 const Img = styled.img`
   position: absolute;
@@ -24,10 +22,13 @@ const Img = styled.img`
 `;
 
 const Phone = styled.picture`
-  height: 213px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+height: 213px;
+  @media (min-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    }
+  }
 
   @media (min-width: 768px) {
     height: 312px;
@@ -69,21 +70,18 @@ const Rating = styled.div`
 
 const Wrapper = styled.div`
   position: relative;
-  min-height: 280px;
   padding-top: 24px;
   padding-bottom: 56px;
 
-  @media (min-width: 768px) {
-    padding-top: 48px;
-    padding-bottom: 56px;
+  @media (min-width: 1200px) {
+    padding-top: 66px;
+    padding-bottom: 68px;
   }
 `;
 
 const Stars = styled.img`
   margin-right: 8px;
 `;
-
-const Iphone = styled.img``;
 
 const AppList = styled.div`
   display: flex;
@@ -123,7 +121,7 @@ export default function() {
       <div className="container">
         <Wrapper>
           <Phone>
-            <source srcSet={phone_lg} media="(@media (min-width: 768px)" />
+            <source srcSet={phone_lg} media="(min-width: 768px)" />
             <Img src={phone_sm} alt="" />
           </Phone>
           <div className="row">
